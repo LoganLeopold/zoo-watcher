@@ -4,7 +4,7 @@ services:
     name: zoo-aid-monitor
     runtime: node
     plan: starter            # cron is paid on Render; 'starter' is the lowest tier
-    repo: https://github.com/yourname/zoo-aid-render   # <-- replace with your repo URL
+    repo: https://github.com/LoganLeopold/zoo-watcher/tree/master # <-- replace with your repo URL
     branch: main
     buildCommand: npm install
     startCommand: node index.js
