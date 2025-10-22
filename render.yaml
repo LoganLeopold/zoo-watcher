@@ -5,7 +5,7 @@ services:
     runtime: node
     plan: starter            # cron is paid on Render; 'starter' is the lowest tier
     repo: https://github.com/LoganLeopold/zoo-watcher/tree/master # <-- replace with your repo URL
-    branch: main
+    branch: master
     buildCommand: npm install
     startCommand: node index.js
     schedule: "0 * * * *"    # hourly, UTC
