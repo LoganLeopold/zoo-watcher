@@ -98,12 +98,12 @@ async function main() {
   const when = new Date().toLocaleString();
   const body = `Zoo Aid/Aide mention(s) found.
 
-Time: ${when}
-URL: ${URL}
+  Time: ${when}
+  URL: ${URL}
 
-Lines:
-${hits.slice(0, 20).map((l) => "• " + l).join("\n")}
-`;
+  Lines:
+  ${hits.slice(0, 20).map((l) => "• " + l).join("\n")}
+  `;
 
   await sendEmail("Zoo Aid/Aide alert: National Zoo volunteer page", body);
   console.log("Email sent.");
