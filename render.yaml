@@ -1,0 +1,26 @@
+# render.yaml — Render Blueprint for an hourly cron job
+services:
+  - type: cron
+    name: zoo-aid-monitor
+    runtime: node
+    plan: starter            # cron is paid on Render; 'starter' is the lowest tier
+    repo: https://github.com/yourname/zoo-aid-render   # <-- replace with your repo URL
+    branch: main
+    buildCommand: npm install
+    startCommand: node index.js
+    schedule: "0 * * * *"    # hourly, UTC
+    envVars:
+      - key: SMTP_HOST
+        sync: false          # prompt for secret at deploy time
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: EMAIL_FROM
+        sync: false
+      - key: EMAIL_TO
+        sync: false
+      - key: ONLY_EMAIL_ON_CHANGE
+        value: "false"
